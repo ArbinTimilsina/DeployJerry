@@ -1,39 +1,61 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-    <meta charset='UTF-8'>
-    <title>
-        Jerry says...
-    </title>
+  <title>Jerry says...</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
+<style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+</style>
 
-<body style='text-align:center; margin-top:50px' >
-    <form action = 'http://localhost:5050/completed' method = 'POST'>
-        <p>
-            <h2>
-                Jerry, complete this, please:
-            </h2>
-            <input type = 'text' name = 'seed' />
-        </p>
-    </form>
-</body>
+<div class="container">
+    <div style='text-align:center; margin-top:50px' >
+        <form action = '/completed' method = 'POST'>
+            <p>
+                <h2>
+                    Jerry, complete this, please:
+                </h2>
+                <input type = 'text' name = 'seed' />
+            </p>
+        </form>
+    </div>
 
-<body style='text-align:center' >
-    <br/>
-    <h4>
-        You asked Jerry to complete:
-        <div> {{seed}} </div>
-    </h4>
+    <div style='text-align:center' >
+        <br/>
+        <h4>
+            You asked Jerry to complete:
+            <div> {{seed}} </div>
+        </h4>
 
-    <br/>
-    <img src='/static/jerry.jpg' alt='Jerry Seinfeld'>
-    <br/>
+        <br/>
+        <img src='/static/jerry.jpg' alt='Jerry Seinfeld' style="max-width:100%;height:auto;">
+        <br/>
 
-    <h1>
-        Jerry says:
-        <div> {{jerry_completes}} </div>
-    </h1>
-</body>
+        <h1>
+            Jerry says:
+            <div> {{jerry_completes}} </div>
+        </h1>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <h4>Created by <a href="https://arbintimilsina.github.io" target="_blank">Arbin Timilsina </a></h4>
+        <p>Code for <a href="https://github.com/ArbinTimilsina/JerryCompletes" target="_blank">training </a> and
+            <a href="https://github.com/ArbinTimilsina/DeployJerry" target="_blank">deploying </a></p>
+    </div>
+</div>
 
 </html>

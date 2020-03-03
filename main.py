@@ -27,12 +27,5 @@ def make_completions():
             )
 
 
-def _main(host="localhost", port=5050):
-    app.run(host=host, port=port, debug=False)
-
-
-def main():
-    """
-    The setuptools entry point.
-    """
-    _main()
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port=8080, debug=True)
