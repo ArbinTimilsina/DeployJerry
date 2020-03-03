@@ -1,4 +1,3 @@
-from ftfy import fix_text
 from nltk import sent_tokenize
 
 BOS = '<|startoftext|>'
@@ -28,17 +27,15 @@ def complete_this(
     decoded_generated_sequence = tokenizer.decode(
         generated_sequence, clean_up_tokenization_spaces=True
     )
-    generated_sequence = fix_text(decoded_generated_sequence)
-    decoded_generated_sequence = generated_sequence.replace('\n', ' ')\
+    decoded_generated_sequence = decoded_generated_sequence.replace('\n', ' ')\
         .replace(BOS, ' ').replace(EOS, ' ').replace('</|startoftext|>', ' ')\
         .replace('<|', ' ').replace('|>', ' ').replace('< |', ' ').replace('| >', ' ')\
         .replace('</', ' ')
-
-    sentences = sent_tokenize(decoded_generated_sequence)
-    output = ''
-    if len(sentences) < num_sent:
-        num_sent = len(sentences)
-    for i in range(num_sent):
-        output = output + ' ' + sentences[i]
-    return output
+    #sentences = sent_tokenize(decoded_generated_sequence)
+    #output = ''
+    #if len(sentences) < num_sent:
+    #    num_sent = len(sentences)
+    #for i in range(num_sent):
+    #   output = output + ' ' + sentences[i]
+    return decoded_generated_sequence
 
