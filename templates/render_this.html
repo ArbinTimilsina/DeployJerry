@@ -9,23 +9,29 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<style>
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: white;
-  color: black;
-  text-align: center;
-}
-</style>
+<div class="container" style="padding-top: 5%">
+    <div style='text-align:center' >
+        <h3>
+            You asked Jerry to complete: {{seed}}
+        </h3>
 
-<div class="container">
-    <div style='text-align:center; margin-top:50px' >
+        <br/>
+        <img src='/static/jerry-talking.jpg' alt='Jerry Seinfeld' style="max-width:100%;height:auto;">
+        <br/>
+
+        <h2 style="color:darkblue;">
+            Jerry says:
+            <div> {{jerry_completes}} </div>
+        </h2>
+    </div>
+
+        <div style='text-align:center; margin-top:50px' >
         <form action = '/completed' method = 'POST'>
             <p>
-                <h2>
+                <h3 style="color:darkred;">
+                    Try again!
+                </h3>
+                <h2 style="color:dodgerblue;">
                     Jerry, complete this, please:
                 </h2>
                 <input type = 'text' name = 'seed' />
@@ -33,26 +39,9 @@
         </form>
     </div>
 
-    <div style='text-align:center' >
-        <br/>
-        <h4>
-            You asked Jerry to complete:
-            <div> {{seed}} </div>
-        </h4>
-
-        <br/>
-        <img src='/static/jerry.jpg' alt='Jerry Seinfeld' style="max-width:100%;height:auto;">
-        <br/>
-
-        <h1>
-            Jerry says:
-            <div> {{jerry_completes}} </div>
-        </h1>
-    </div>
-
     <!-- Footer -->
-    <div class="footer">
-        <h4>Created by <a href="https://arbintimilsina.github.io" target="_blank">Arbin Timilsina </a></h4>
+    <div class="container-fluid bg-black text-center" style="padding: 20px; auto ">
+    <h4>Created by <a href="https://arbintimilsina.github.io" target="_blank">Arbin Timilsina </a></h4>
         <p>Code for <a href="https://github.com/ArbinTimilsina/JerryCompletes" target="_blank">training </a> and
             <a href="https://github.com/ArbinTimilsina/DeployJerry" target="_blank">deploying </a></p>
     </div>
